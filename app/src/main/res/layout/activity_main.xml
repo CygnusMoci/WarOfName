@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
@@ -11,10 +12,45 @@
         app:srcCompat="@drawable/splash_background" />
 
     <LinearLayout
+        android:id="@+id/main_layout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="30dp"
         android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/main_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/name1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="text"
+                android:hint="名字1"/>
+
+            <TextView
+                android:id="@+id/vs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text=" VS "/>
+
+            <EditText
+                android:id="@+id/name2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="text"
+                android:hint="名字2"/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/start"

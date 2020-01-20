@@ -5,7 +5,7 @@ package com.moci.warofname.entity;
  * @create : 2020-01-10 15:25
  * @description :
  */
-public class skill {
+public class Skill {
     private String skillName;
     private int adDamage;
     private int apDamage;

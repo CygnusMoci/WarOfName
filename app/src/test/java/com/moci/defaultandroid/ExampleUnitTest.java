@@ -1,10 +1,8 @@
 package com.moci.defaultandroid;
 
-import com.moci.warofname.entity.nameHero;
+import com.moci.warofname.entity.NameHero;
 
 import org.junit.Test;
-
-import javax.xml.transform.Source;
 
 import static org.junit.Assert.*;
 
@@ -78,14 +76,14 @@ public class ExampleUnitTest {
                 "虽然公众主要是对44个汉字字形微调的反对意见比较强烈，但大多是即兴式的情绪型呼吁，这在网络和报纸中是很明显的，而极少从理性上进行的认真研究讨论。";
 //        for (int i = 0; i < str.length()-3; i++) {
 //            String name = str.charAt(i)+""+str.charAt(i+1)+str.charAt(i+2)+str.charAt(i+3);
-//            nameHero pT = new nameHero(name);
+//            NameHero pT = new NameHero(name);
 //            System.out.println(pT);
 //        }
         while (true){
             String a = System.currentTimeMillis()+"";
             try {
                 Thread.sleep(500);
-                nameHero pT = new nameHero(a);
+                NameHero pT = new NameHero(a);
                 System.out.println(a+pT);
             } catch (InterruptedException e) {
                 e.printStackTrace();

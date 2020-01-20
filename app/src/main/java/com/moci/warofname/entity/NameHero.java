@@ -1,19 +1,22 @@
 package com.moci.warofname.entity;
 
+import java.util.Arrays;
+
 /**
  * @author : Cygnusmoci
  * @create : 2020-01-10 15:20
  * @description :
  */
-public class nameHero {
+public class NameHero {
     private String name;
     private int hp;
     private int mp;
     private int att;
     private int def;
-    private skill[] skills;
+    private String sign;
+    private Skill[] skills;
 
-    public nameHero(String name) {
+    public NameHero(String name) {
         this.name = name;
         init();
     }
@@ -28,7 +31,14 @@ public class nameHero {
         this.hp = toInt(sign.substring(0,4));
         this.mp = toInt(sign.substring(5,8));
         this.att = toInt(sign.substring(9,12));
-        this.def = toInt(sign.substring(13,15));
+        this.def = toInt(sign.substring(14,16));
+
+        if(this.name.equals("英杰")){
+            this.hp += 999;
+            this.mp += 999;
+            this.att += 99;
+            this.def += 99;
+        }
     }
 
     private String sign(int[] arr){
@@ -37,7 +47,7 @@ public class nameHero {
         for (int i = 0; i < len; i++) {
             strSign.append(arr[i]);
         }
-        String sign = strSign.toString()+"4396";
+        sign = strSign.toString()+"4396";
         while (sign.length()<20){
             sign+=sign;
         }
@@ -61,7 +71,7 @@ public class nameHero {
         this.def = def;
     }
 
-    public void setSkills(skill[] skills) {
+    public void setSkills(Skill[] skills) {
         this.skills = skills;
     }
 
@@ -93,18 +103,20 @@ public class nameHero {
         return def;
     }
 
-    public skill[] getSkills() {
+    public Skill[] getSkills() {
         return skills;
     }
 
     @Override
     public String toString() {
-        return
-                "{ 姓名 = '" + name + '\'' +
+        return "{" +
+                "姓名 = '" + name + '\'' +
                 ", 生命值 = " + hp +
                 ", 魔法值 = " + mp +
                 ", 攻击力 = " + att +
                 ", 防御力 = " + def +
+                ", sign = '" + sign + '\'' +
+                ", skills= " + Arrays.toString(skills) +
                 '}';
     }
 }
