@@ -87,7 +87,7 @@ public class FightActivity extends AppCompatActivity{
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivityForResult(new Intent(FightActivity.this,MainActivity.class),1);
+                startActivity(new Intent(FightActivity.this,MainActivity.class));
                 finish();
             }
         });
@@ -176,7 +176,7 @@ public class FightActivity extends AppCompatActivity{
                     hp1.setText(hero_p1.getHp()+"");
                     hp2.setText(hero_p2.getHp()+"");
                     // 自动滚动到最后一行
-                    int offset=logPreview.getLineCount()*logPreview.getLineHeight();
+                    int offset=logPreview.getLineCount()*(11+logPreview.getLineHeight());
                     Log.w(TAG, "getLineCount = "+logPreview.getLineCount());
                     Log.w(TAG, "getLineHeight = "+logPreview.getLineHeight());
                     Log.w(TAG, "logPreview.getHeight() = "+logPreview.getHeight());
@@ -189,10 +189,5 @@ public class FightActivity extends AppCompatActivity{
         }catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private void enterBack(){
-        startActivity(new Intent(FightActivity.this,MainActivity.class));
-        finish();
     }
 }

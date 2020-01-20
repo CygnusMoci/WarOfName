@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             bundle.putString("p2",p2);
             it.putExtras(bundle);
             startActivityForResult(it,100);
+            finish();
         }else {
             Toast.makeText(this.getApplicationContext(),"请输入正确的名字",Toast.LENGTH_LONG).show();
         }
